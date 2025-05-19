@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
+
 import ali1 from '../img/ali1.png';
 import ali2 from '../img/ali2.jpg';
 
@@ -19,15 +20,17 @@ const photos = [
   {
     id: 3,
     url: ali2,
-    alt: 'Beautifully plated dish'
+    alt: 'mon amour'
   },
   {
     id: 4,
     url: ali1,
-    alt: 'Couple enjoying a meal'
+    alt: 'je taime'
   }
  
 ];
+
+
 
 const PhotoGallery: React.FC = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
@@ -48,12 +51,12 @@ const PhotoGallery: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-serif text-rose-900 text-center mb-12">
           Nos Moments Spéciaux
         </h2>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
           {photos.map((photo) => (
             <div 
               key={photo.id} 
-              className="relative overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg"
+              className="relative overflow-hidden rounded-xl shadow-xl aspect-square cursor-pointer transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl bg-rose-50"
               onClick={() => openPhoto(photo.id)}
             >
               <img 
@@ -77,7 +80,7 @@ const PhotoGallery: React.FC = () => {
           >
             <X size={32} />
           </button>
-          
+
           <img 
             src={photos.find(p => p.id === selectedPhoto)?.url} 
             alt={photos.find(p => p.id === selectedPhoto)?.alt || "Photo detail"} 
