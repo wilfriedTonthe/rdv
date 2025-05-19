@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
+import ali1 from '../img/ali1.png'; // assure-toi que l'image s'appelle bien ali1.jpg
+import ali2 from '../img/ali2.jpg'; // idem pour ali2.jpg
 
-import ali1 from '../img/ali1.png';
-import ali2 from '../img/ali2.jpg';
-
-
-// Sample photos - replace these with your actual photos
 const photos = [
   {
     id: 1,
@@ -20,17 +17,14 @@ const photos = [
   {
     id: 3,
     url: ali2,
-    alt: 'mon amour'
+    alt: 'Beautifully plated dish'
   },
   {
     id: 4,
     url: ali1,
-    alt: 'je taime'
+    alt: 'Couple enjoying a meal'
   }
- 
 ];
-
-
 
 const PhotoGallery: React.FC = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
@@ -52,11 +46,11 @@ const PhotoGallery: React.FC = () => {
           Nos Moments Spéciaux
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {photos.map((photo) => (
             <div 
               key={photo.id} 
-              className="relative overflow-hidden rounded-xl shadow-xl aspect-square cursor-pointer transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl bg-rose-50"
+              className="relative overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg"
               onClick={() => openPhoto(photo.id)}
             >
               <img 
