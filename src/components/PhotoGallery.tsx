@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
-import ali1 from './ali1.png';
-import ali2 from './ali2.jpg';
+import ali1 from '../img/ali1.png';
+import ali2 from '../img/ali2.jpg';
 
 
 // Sample photos - replace these with your actual photos
